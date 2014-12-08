@@ -7,9 +7,9 @@ import java.rmi.registry.Registry;
 public class Client {
 	public void ServerLink() {
 		try {
-			Registry reg = LocateRegistry.getRegistry("localhost", 1099);
+			Registry reg = LocateRegistry.getRegistry("localhost", 7);
 			EchoService echo = (EchoService) reg.lookup("echo");
-			echo.echo("string");
+			echo.echo("Hello World!");
 		} catch (RemoteException | NotBoundException e) {
 			e.printStackTrace();
 		}
